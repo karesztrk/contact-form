@@ -1,52 +1,43 @@
 import {
   Button,
-  Center,
-  Checkbox,
+  Box,
   Container,
-  FormControl,
-  FormLabel,
   Heading,
-  Input,
-  Select,
-  Text,
-  Textarea,
-  VStack,
-} from '@chakra-ui/react';
+  Paragraph,
+  FieldStack,
+  InputField,
+  TextareaField,
+  SelectField,
+  CheckboxField,
+} from 'bumbag';
 import Layout from '../components/Layout';
 
 const IndexPage = () => (
   <Layout title='Hello Contact Form'>
-    <Container maxW='xl'>
-      <Heading>Hello Contact Form 👋</Heading>
-      <VStack pt={8} pb={4}>
-        <Text w='100%'>
-          A sample form to demonstrate various UI libraries with their
-          capabilities.
-        </Text>
-        <FormControl id='name'>
-          <FormLabel>Your name</FormLabel>
-          <Input />
-        </FormControl>
-        <FormControl id='email'>
-          <FormLabel>Email address</FormLabel>
-          <Input type='email' />
-        </FormControl>
-        <FormControl id='description'>
-          <FormLabel>Your description</FormLabel>
-          <Textarea placeholder='Tell us what do you think' />
-        </FormControl>
-        <FormControl id='country'>
-          <FormLabel>Country</FormLabel>
-          <Select placeholder='Select country'>
-            <option>United Kingdom</option>
-            <option>Hungary</option>
-          </Select>
-        </FormControl>
-        <FormControl id='rememberMe'>
-          <Checkbox defaultIsChecked>Remember me</Checkbox>
-        </FormControl>
-      </VStack>
-      <Button>Submit</Button>
+    <Container maxWidth='768px'>
+      <Heading paddingY='major-2'>Hello Contact Form 👋</Heading>
+      <Paragraph>
+        A sample form to demonstrate various UI libraries with their
+        capabilities.
+      </Paragraph>
+      <Box>
+        <FieldStack>
+          <InputField name='name' label='Your name' />
+          <InputField name='email' label='Email address' type='email' />
+          <TextareaField placeholder='Tell us what do you think' />
+          <SelectField
+            label='Country'
+            options={[
+              { label: 'United Kingdom', value: 'uk' },
+              { label: 'Hungary', value: 'hu' },
+            ]}
+          />
+          <CheckboxField checked checkboxLabel='Remember me' />
+          <Button palette='primary' marginY='minor-2'>
+            Submit
+          </Button>
+        </FieldStack>
+      </Box>
     </Container>
   </Layout>
 );
