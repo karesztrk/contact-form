@@ -1,53 +1,55 @@
 import {
   Button,
-  Center,
+  Card,
   Checkbox,
-  Container,
-  FormControl,
-  FormLabel,
-  Heading,
+  Col,
+  Grid,
   Input,
+  Row,
   Select,
+  Spacer,
   Text,
   Textarea,
-  VStack,
-} from '@chakra-ui/react';
+} from '@geist-ui/react';
 import Layout from '../components/Layout';
 
 const IndexPage = () => (
   <Layout title='Hello Contact Form'>
-    <Container maxW='xl'>
-      <Heading>Hello Contact Form 👋</Heading>
-      <VStack pt={8} pb={4}>
-        <Text w='100%'>
-          A sample form to demonstrate various UI libraries with their
-          capabilities.
-        </Text>
-        <FormControl id='name'>
-          <FormLabel>Your name</FormLabel>
-          <Input />
-        </FormControl>
-        <FormControl id='email'>
-          <FormLabel>Email address</FormLabel>
-          <Input type='email' />
-        </FormControl>
-        <FormControl id='description'>
-          <FormLabel>Your description</FormLabel>
-          <Textarea placeholder='Tell us what do you think' />
-        </FormControl>
-        <FormControl id='country'>
-          <FormLabel>Country</FormLabel>
-          <Select placeholder='Select country'>
-            <option>United Kingdom</option>
-            <option>Hungary</option>
-          </Select>
-        </FormControl>
-        <FormControl id='rememberMe'>
-          <Checkbox defaultIsChecked>Remember me</Checkbox>
-        </FormControl>
-      </VStack>
-      <Button>Submit</Button>
-    </Container>
+    <Card>
+      <Text h1>Hello Contact Form 👋</Text>
+      <Text p>
+        A sample form to demonstrate various UI libraries with their
+        capabilities.
+      </Text>
+      <Input placeholder='Your name'>Name</Input>
+      <Spacer />
+      <Input placeholder='Email address' type='email'>
+        Email
+      </Input>
+      <Spacer />
+      <div>
+        <label style={{ display: 'block', color: '#444', marginBottom: '8pt' }}>
+          Your description
+        </label>
+        <Textarea placeholder='Tell us what do you think'></Textarea>
+      </div>
+      <Spacer />
+      <div>
+        <label style={{ display: 'block', color: '#444', marginBottom: '8pt' }}>
+          Country
+        </label>
+        <Select placeholder='Select country'>
+          <Select.Option value='1'>United Kingdom</Select.Option>
+          <Select.Option value='2'>Hungary</Select.Option>
+        </Select>
+      </div>
+      <Spacer />
+      <Checkbox checked={true}>Remember me</Checkbox>
+      <Spacer />
+      <Button auto type='secondary'>
+        Submit
+      </Button>
+    </Card>
   </Layout>
 );
 
