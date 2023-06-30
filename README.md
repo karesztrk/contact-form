@@ -1,41 +1,53 @@
-# TypeScript Next.js example
+# Welcome to Remix!
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+- [Remix Docs](https://remix.run/docs)
 
-## Deploy your own
+## Development
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+From your terminal:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-# or
-yarn create next-app --example with-typescript with-typescript-app
+```sh
+npm run dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+This starts your app in development mode, rebuilding assets on file changes.
 
-## Notes
+## Deployment
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+First, build your app for production:
 
-```
-npm install --save-dev typescript
-```
-
-To enable TypeScript's features, we install the type declarations for React and Node.
-
-```
-npm install --save-dev @types/react @types/react-dom @types/node
+```sh
+npm run build
 ```
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+Then run the app in production mode:
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
+```sh
+npm start
+```
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+Now you'll need to pick a host to deploy it to.
+
+### DIY
+
+If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
+
+Make sure to deploy the output of `remix build`
+
+- `build/`
+- `public/build/`
+
+### Using a Template
+
+When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
+
+```sh
+cd ..
+# create a new project, and pick a pre-configured host
+npx create-remix@latest
+cd my-new-remix-app
+# remove the new project's app (not the old one!)
+rm -rf app
+# copy your app over
+cp -R ../my-old-remix-app/app app
+```
