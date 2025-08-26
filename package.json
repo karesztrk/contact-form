@@ -1,26 +1,15 @@
 {
   "name": "contact-form",
-  "version": "1.0.0",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.3.3",
-    "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
-    "framer-motion": "^3.7.0",
-    "next": "^10.0.7",
-    "prettier": "^2.2.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  },
-  "devDependencies": {
-    "@types/node": "^14.14.31",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.1",
-    "typescript": "4.1.5"
-  },
-  "license": "MIT"
+    "astro": "^5.13.3",
+    "kelpui": "^1.4.0"
+  }
 }
