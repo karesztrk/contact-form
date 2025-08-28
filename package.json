@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.13.3",
-    "kelpui": "^1.4.0"
+    "@picocss/pico": "^2.1.1",
+    "astro": "^5.13.3"
   }
 }
+
