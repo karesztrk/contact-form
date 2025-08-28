@@ -1,15 +1,14 @@
 ---
-
+import "kelpui/css/kelp.css";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="../../node_modules/kelpui/css/kelp.css">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Contact Form</title>
   </head>
   <body class="dark">
     <header>
@@ -18,40 +17,35 @@
     <main class="container">
       <h1>Hello Contact Form 👋</h1>
       <form>
-        <div class="stack">
+        <fieldset>
           <p>
             A sample form to demonstrate various UI libraries with their
             capabilities.
           </p>
-          <div >
-            <label for="name">Your name</label>
-            <input id="name" name="name" type="text" />
-          </div>
-          <div >
-            <label for="email">Email address</label>
-            <input id="email" name="email" type='email' />
-          </div>
-          <div >
-            <label for="description">Your description</label>
-            <textarea id="description" name="description" placeholder='Tell us what do you think' />
-          </div>
-          <div>
-            <label for="country">Country</label>
-            <select id="country" name="country">
-              <option>United Kingdom</option>
-              <option>Hungary</option>
-            </select>
-          </div>
-          <div>
-            <label>
-              <input id='remember' type="checkbox" checked>
-              Remember me
-            </label>
-          </div>
-        </div>
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" placeholder="How should we call you?" autocomplete="name" />
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Valid email address"
+            autocomplete="email"
+          />
+          <label for="description">Your description</label>
+          <textarea id="description" name="description" placeholder='Tell us what do you think' />
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option>United Kingdom</option>
+            <option>Hungary</option>
+          </select>
+
+          <label>
+            <input id='remember' type="checkbox" checked>
+            Remember me
+          </label>
+        </fieldset>
         <button type="submit" class="primary">Submit</Button>
       </form>
     </main>
   </body>
-  <script is:inline src="../../node_modules/kelpui/js/kelp.js"></script>
 </html>
